@@ -1,20 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      ViaCep
+      Pesquisa CEP
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h3>ViaCep Ionic 3 framework sample</h3>
+    <h3>Pesquisa de CEP</h3>
     <h4>Digite seu CEP: </h4>
   <ion-grid>
     <ion-row>
       <ion-col>
-          <ion-searchbar class="pesquisa" type="tel" [(ngModel)]="cep"
-          (ionInput)="getEndereco()"></ion-searchbar>
-        </ion-col>
+          <button ion-button block (click)="getEndereco();">BUSCAR</button>   
+          <ion-searchbar class="pesquisa" type="tel" [(ngModel)]="cep" ></ion-searchbar>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-12>
@@ -43,6 +43,9 @@
                 <ion-item *ngIf="endereco.gia">
                   GIA:<br> {{ endereco.gia }}
                 </ion-item>
+
+
+
           </ion-list>
       </ion-col>
     </ion-row>

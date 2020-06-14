@@ -9,19 +9,25 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ViacepProvider } from '../providers/viacep/viacep';
 
+
+
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+  
+    HomePage  
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule
+ 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+   
     HomePage
   ],
   providers: [
