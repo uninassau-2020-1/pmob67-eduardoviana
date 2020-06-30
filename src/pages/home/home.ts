@@ -11,17 +11,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class HomePage {
 
-
-
-
-
-
-
-
 	
 	private cep;
 	private endereco:any = {};
 	vazio = "";
+	mapa = "";
 	formGroup: FormGroup;
 
 	constructor(public navCtrl: NavController, 
@@ -49,6 +43,13 @@ export class HomePage {
 				}	
 				this.endereco = data;
 				console.log(data);
+				
+				// Modelo de URL
+				// https://www.google.com/maps/search/?api=1&query=53080310
+				let iframeMapa = document.getElementsByName('iframeMapa');
+				iframeMapa.item['src'] = "https://www.google.com/maps/search/?api=1&query=" + this.endereco.logradouro.split(' ').join('+') + '+' + this.endereco.localidade.split(' ').join('+') + '+' + this.endereco.uf;
+				console.log( "https://www.google.com/maps/search/?api=1&query=" + this.endereco.logradouro.split(' ').join('+') + '+' + this.endereco.localidade.split(' ').join('+') + '+' + this.endereco.uf);
+
         }
       );
 	}
